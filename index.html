@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#167947">
+  <meta name="description" content="Entre no Yoshi World, confira o servidor de Minecraft e acompanhe nossa comunidade.">
+  <title>Yoshi World 🦖</title>
+  <style>
+    :root {
+      --deep: #08291d;
+      --forest: #104c31;
+      --green: #16834b;
+      --lime: #c5ff83;
+      --mint: #e3ffd4;
+      --cream: #fffbea;
+      --text: #183a28;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #fff;
+      background:
+        radial-gradient(ellipse at 50% -10%, rgba(128, 239, 117, .28), transparent 42%),
+        linear-gradient(160deg, #176c42 0%, var(--forest) 40%, var(--deep) 100%);
+      overflow-x: hidden;
+    }
+    body::before, body::after {
+      content: ""; position: fixed; width: 260px; height: 260px; border-radius: 50%;
+      background: rgba(179, 255, 123, .07); filter: blur(2px); pointer-events: none;
+    }
+    body::before { top: 18%; left: -140px; }
+    body::after { right: -140px; bottom: 12%; }
+    .wrap { width: min(100% - 32px, 850px); margin: 0 auto; padding: 30px 0 24px; position: relative; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 46px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: .03em; }
+    .brand-icon { display: grid; place-items: center; width: 42px; height: 42px; background: var(--lime); color: var(--text); border-radius: 14px; font-size: 25px; transform: rotate(-5deg); }
+    .pill { border: 1px solid rgba(221,255,219,.25); background: rgba(255,255,255,.08); color: #e8ffe9; border-radius: 999px; padding: 8px 12px; font-size: .77rem; font-weight: 800; letter-spacing: .07em; }
+    .hero { text-align: center; padding: 4px 0 26px; }
+    .mascot {
+      width: 112px; height: 112px; margin: 0 auto 22px; border-radius: 34px;
+      display: grid; place-items: center; font-size: 66px;
+      background: linear-gradient(145deg, #d7ff9d, #6bdc75);
+      box-shadow: 0 18px 36px rgba(0,0,0,.24), inset 0 2px 7px rgba(255,255,255,.75);
+      transform: rotate(-4deg);
+    }
+    .kicker { color: var(--lime); font-size: .78rem; font-weight: 900; letter-spacing: .23em; }
+    h1 { margin: 10px 0 14px; font-size: clamp(2.7rem, 10vw, 5.4rem); line-height: .98; letter-spacing: -.065em; text-shadow: 0 6px 0 rgba(0,0,0,.12); }
+    .hero p { max-width: 570px; margin: 0 auto; color: #d7efdf; font-size: clamp(1rem, 3vw, 1.13rem); line-height: 1.7; }
+    .section-title { text-align: center; margin: 12px 0 18px; font-size: 1rem; font-weight: 850; color: #efffed; }
+    .links { display: grid; grid-template-columns: 1fr; gap: 13px; max-width: 570px; margin: 0 auto; }
+    .link-card {
+      display: flex; align-items: center; gap: 15px; min-height: 86px; padding: 16px 18px;
+      border-radius: 20px; text-decoration: none; color: var(--text); background: var(--cream);
+      border: 1px solid rgba(255,255,255,.58); box-shadow: 0 7px 0 rgba(0,0,0,.16);
+      transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+    }
+    .link-card:hover { transform: translateY(-3px); box-shadow: 0 10px 0 rgba(0,0,0,.16); background: #fff; }
+    .link-card:active { transform: translateY(2px); box-shadow: 0 3px 0 rgba(0,0,0,.16); }
+    .link-card:focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; }
+    .icon { flex: 0 0 50px; width: 50px; height: 50px; border-radius: 15px; display: grid; place-items: center; background: #e1f5d6; font-size: 27px; }
+    .link-copy { flex: 1; min-width: 0; }
+    .link-name { display: block; font-size: 1rem; font-weight: 950; letter-spacing: .01em; }
+    .link-desc { display: block; margin-top: 4px; color: #5b7664; font-size: .82rem; line-height: 1.35; font-weight: 550; }
+    .arrow { color: #548362; font-size: 1.3rem; font-weight: 900; }
+    .tip { max-width: 570px; margin: 24px auto 0; text-align: center; color: #bdddc6; font-size: .88rem; line-height: 1.6; }
+    .tip strong { color: var(--lime); }
+    footer { margin-top: 37px; padding-top: 18px; border-top: 1px solid rgba(225,255,230,.15); text-align: center; color: #96bea2; font-size: .78rem; }
+    footer span { color: var(--lime); }
+    @media (min-width: 620px) {
+      .wrap { padding-top: 35px; }
+      header { margin-bottom: 55px; }
+      .links { gap: 15px; }
+      .link-card { padding: 18px 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .link-card { transition: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="brand-icon" aria-hidden="true">🦖</span><span>YOSHI WORLD</span></div>
+      <span class="pill">MUNDO DA AVENTURA</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="titulo">
+        <div class="mascot" aria-hidden="true">🥚</div>
+        <div class="kicker">VOCÊ CHEGOU AO</div>
+        <h1 id="titulo">YOSHI WORLD</h1>
+        <p>Prepare-se para explorar, jogar e se divertir! Escolha uma opção abaixo e venha fazer parte da aventura. 💚</p>
+      </section>
+
+      <section aria-labelledby="links-titulo">
+        <h2 class="section-title" id="links-titulo">🚀 Para onde vamos agora?</h2>
+        <nav class="links" aria-label="Links principais do Yoshi World">
+          <a class="link-card" href="https://add.aternos.org/yoshiserver" target="_blank" rel="noopener noreferrer">
+            <span class="icon" aria-hidden="true">🎮</span>
+            <span class="link-copy">
+              <span class="link-name">ENTRAR NO SERVIDOR</span>
+              <span class="link-desc">Acesse o servidor do Minecraft.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="link-card" href="https://rxly.io/minecraf" target="_blank" rel="noopener noreferrer">
+            <span class="icon" aria-hidden="true">📲</span>
+            <span class="link-copy">
+              <span class="link-name">BAIXAR MINECRAFT APK</span>
+              <span class="link-desc">Abrir o link para baixar o aplicativo.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="link-card" href="https://w.app/yoshi" target="_blank" rel="noopener noreferrer">
+            <span class="icon" aria-hidden="true">🔌</span>
+            <span class="link-copy">
+              <span class="link-name">LIGUE O SERVIDOR</span>
+              <span class="link-desc">Abra o link para acessar e ligar o servidor.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </nav>
+        <p class="tip">🌿 <strong>Dica:</strong> divirta-se, respeite os outros jogadores e cuide da nossa comunidade!</p>
+      </section>
+    </main>
+
+    <footer>Feito com <span>♥</span> para a comunidade <span>Yoshi World</span>.</footer>
+  </div>
+</body>
+</html>
